@@ -1,11 +1,24 @@
 :root {
+    --color-primary: #F7D61C;
     --color-bg: #F0F0F0;
+
+    --color-h1: #DEBD03;
     --color-text: #000000;
+    --color-text-light: #F4F4F4;
+
     --border-20: 20px;
+    --layout-width: 1172px;
 }
 
 * {
     box-sizing: border-box;
+    /* outline: 4px solid green !important; */
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
