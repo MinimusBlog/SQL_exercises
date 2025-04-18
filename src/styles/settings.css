@@ -1,0 +1,21 @@
+:root {
+    --color-bg: #F0F0F0;
+    --color-text: #000000;
+    --border-20: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
