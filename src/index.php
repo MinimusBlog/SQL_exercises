@@ -55,16 +55,26 @@
                 <button class="btn button-category">Основное</button>
                 <p class="manual__p">Основные запросы</p>
                 <div class="chip--wrapper chip--wrapper--stroke">
-                    <button class="chip chip-active">SELECT <br>
+                    <button class="chip chip-active" 
+                    onclick="window.location.href='./modules/article.php?id=1'">
+                    SELECT <br>
                     Получение записей</button>
-                    <button class="chip">INSERT <br>
+                    <button class="chip"
+                    onclick="window.location.href='./modules/article.php?id=2'">
+                    INSERT <br>
                     Вставка записей</button>
-                    <button class="chip">UPDATE <br>
+                    <button class="chip"
+                    onclick="window.location.href='./modules/article.php?id=3'">
+                    UPDATE <br>
                     Изменение записей</button>
                     <div class="chip-str">
-                        <button class="chip">DELETE <br>
+                        <button class="chip"
+                        onclick="window.location.href='./modules/article.php?id=4'">
+                        DELETE <br>
                         Удаление записей</button>
-                        <button class="chip">COUNT <br>
+                        <button class="chip"
+                        onclick="window.location.href='./modules/article.php?id=5'">
+                        COUNT <br>
                         Подсчет записей</button>
                     </div>
                 </div>
