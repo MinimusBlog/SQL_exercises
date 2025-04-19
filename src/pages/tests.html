@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css"/>
+    <title>SQL Тесты</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet"/>
+    <link rel="stylesheet" href="../styles/components.css"/>
+    <link rel="stylesheet" href="../styles/header.css"/>
+    <link rel="stylesheet" href="../styles/tests.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/elegant.min.css"/>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header__wrapper">
+            <a href=""><img src="" alt=""></a>
+            <nav>
+                <ul class="menu">
+                    <li class="menu__item"><a href="../index.html">Справочник</a></li>
+                    <li class="menu__item menu__item--active"><a href="#">Тесты</a></li>
+                    <li class="menu__item"><a href="#">Задачник</a></li>
+                    <li class="menu__item"><a href="#">Песочница</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header__login" aria-label="Вход в личный кабинет">
+                <img src="../images/icons/user.svg" alt="Иконка пользователя">
+            </a>
+            <button class="header__mobile-menu-button" aria-expanded="false" aria-haspopup="true">
+                <img src="../images/icons/burger.svg" alt="Мобильное меню">
+            </button>
+        </div>
+    </header>
+
+    <main class="tests-container">
+        <!-- Блок с выбором категории теста -->
+        <div class="test-categories window">
+            <h2>Выберите категорию:</h2>
+            <div class="categories-list">
+                <button class="button button-active" onclick="loadTest('select')">SELECT Получение записей</button>
+                <button class="button button-active" onclick="loadTest('insert')">INSERT Вставка записей</button>
+                <button class="button button-active" onclick="loadTest('update')">UPDATE Изменение записей</button>
+                <button class="button button-active" onclick="loadTest('delete')">DELETE Удаление записей</button>
+                <button class="button button-active" onclick="loadTest('count')">COUNT Подсчет записей</button>
+            </div>
+        </div>
+
+        <!-- Блок с текущим тестом -->
+        <div class="current-test window" id="testBlock">
+            <div class="test-header">
+                <!-- Добавим иконку для категории -->
+                <div class="category-title">
+                    <span id="testCategoryIcon" class="category-icon">📋</span>
+                    <h2 id="testCategory">SELECT Получение записей</h2>
+                </div>
+                <div class="test-progress">
+                    <span class="progress-label">Прогресс:</span>
+                    <span id="currentQuestion">1</span>/<span id="totalQuestions">5</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-question" id="questionText">
+                <!-- Вопрос будет вставлен динамически -->
+            </div>
+            
+            <!-- Варианты ответов (для теоретических вопросов) -->
+            <div class="test-answers" id="answersBlock" style="display:none;">
+                <!-- Варианты будут вставлены динамически -->
+            </div>
+            
+            <!-- Поле для ввода SQL (для практических заданий) -->
+            <div class="test-sql-editor" id="sqlEditorBlock" style="display:none;">
+                <div class="editor-header">
+                    <span>SQL редактор</span>
+                    <button class="button button-small" onclick="formatSQL()">Форматировать</button>
+                </div>
+                <textarea id="sqlEditor"></textarea>
+                <div class="hint">
+                    <button class="button button-hint" onclick="showHint()">
+                        <span class="hint-icon">💡</span> Подсказка
+                    </button>
+                    <p class="hint__text" id="hintText" style="display:none;"></p>
+                </div>
+            </div>
+            
+            <div class="test-actions">
+                <button class="button button-check" onclick="checkAnswer()" id="checkButton">
+                    <span class="button-icon">✓</span> Проверить
+                </button>
+                <button class="button button-next" onclick="nextQuestion()" id="nextButton" disabled>
+                    <span class="button-icon">→</span> Следующий вопрос
+                </button>
+                <div class="test-result" id="testResult"></div>
+            </div>
+        </div>
+        
+        <!-- Блок с результатами -->
+        <div class="test-results window" id="resultsBlock" style="display:none;">
+            <div class="results-header">
+                <h2>Результаты теста: <span id="resultsCategory"></span></h2>
+                <div class="score-box">
+                    <div class="score-circle">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                        </svg>
+                        <span id="scorePercent">80%</span>
+                    </div>
+                    <div class="score-text">
+                        Правильных ответов: <span id="scoreValue">4</span> из <span id="maxScore">5</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wrong-answers" id="wrongAnswers">
+                <h3>Ошибки:</h3>
+                <!-- Сюда будут добавляться вопросы с ошибками -->
+            </div>
+            
+            <div class="results-actions">
+                <button class="button button-restart" onclick="restartTest()">
+                    <span class="button-icon">↻</span> Пройти еще раз
+                </button>
+                <button class="button button-newtest" onclick="loadNewTest()">
+                    <span class="button-icon">📋</span> Выбрать другой тест
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подключение скриптов -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/sql/sql.min.js"></script>
+    <script src="../scripts/tests.js"></script> 
+</body>
+</html>
