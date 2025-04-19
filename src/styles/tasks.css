@@ -80,7 +80,7 @@
 /*это CSS анимация для текста подсказки*/
 @keyframes show-hint {
 	from {left: -100%;}
-	to {left: 0;}
+	to {left: 14px;}
 }
 
 /*media не копировал.*/

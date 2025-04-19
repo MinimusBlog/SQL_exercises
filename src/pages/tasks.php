@@ -19,6 +19,26 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/sql/sql.min.js"></script>
 
+	<!-- обращение к БД -->
+	<?php
+				include "../includes/settings.php";
+				$sql = "SELECT * FROM tasks";
+				$result = mysqli_query($link,$sql);
+
+				$id = 0; // это ID, по которому берётся задание
+				$taskText =  "";
+				$taskHint =  "";
+				$taskAwnser =  "";
+				while($row = mysqli_fetch_assoc($result)){
+					if ($row["taskID"]==$id){
+					$taskText = $row["taskText"];
+					$taskHint = $row["taskHint"];
+					$taskAwnser = $row["taskAwnser"];
+					}
+				}
+				?>
+
+
 </head>
 <body>
 	
@@ -44,19 +64,20 @@
             </button>
         </div>
     </header>
+
 			<!-- номер задачи -->
 			<div class="level">
-				<h1 class="level__number">Здесь номер задачи</h1>
+				<h1 class="level__number">Номер <?php echo $id+1;?></h1>
 			</div>
 
 			<!-- окно с задачей -->
 			<div class="task window">
-				<p class="task__text">Это текстовое поле с заданием. <br>да.</p>
+				<p class="task__text"><?php echo $taskText;?></p>
 			</div>
 
 			<!-- всплывающая подсказка -->
 			<div class="hint">
-				<p class="hint__text">"Это подсказка... надо написать HI"</p>
+				<p class="hint__text"><?php echo $taskHint ?></p>
 				<button class="button button-active" onclick="hint__button__onClick()">показать подсказку</button>
 			</div>
 
@@ -68,8 +89,30 @@
 				<button class="button button-active" onclick="checkAwnser()">проверить</button>
 				<p class="check__result window">тут текст меняется на правильно и нет</p>
 			</div>
-		</div>
+	<script type="text/javascript">
+			let editor = document.getElementsByClassName("editor__textarea")[0];
+	let myCodeMirror = CodeMirror.fromTextArea(editor,{
+		lineNumbers: true,
+		mode: "sql"
+		});
+	let hint_text = document.getElementsByClassName("hint__text")[0].style;
+	let check_result = document.getElementsByClassName("check__result")[0];
 	
-	<script type="module" src="./scripts/main.js"></script>
+	// это анимация окна подсказки.
+	function hint__button__onClick(){
+		//text.visibility="visible";
+		hint_text.left="14px";
+		hint_text.animationPlayState="running";
+	}
+	
+	//проверка ответа
+	function checkAwnser(){
+		if(myCodeMirror.getValue()==="<?php echo $taskAwnser;?>"){
+			check_result.innerHTML="правильно";
+		}else{
+			check_result.innerHTML="ответ неверный. подумайте ещё....";
+		}
+	}
+	</script>
 </body>
 </html> 

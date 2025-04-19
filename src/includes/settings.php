@@ -1,7 +1,7 @@
 <?php
 
 $servername = 'localhost'; // БД хост
-$username = 'root'; // БД пользователь
+$username = 'user'; // БД пользователь
 $password = ''; // БД пароль
 $dbname =  'sql_exercises'; // имя БД
 

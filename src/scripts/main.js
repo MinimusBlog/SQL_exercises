@@ -15,7 +15,7 @@ let editor = document.getElementsByClassName("editor__textarea")[0];
 	
 	//проверка ответа
 	function checkAwnser(){
-		if(myCodeMirror.getValue()==="HI"){
+		if(myCodeMirror.getValue()===awnser){
 			check_result.innerHTML="ПРАВИЛЬНО";
 		}else{
 			check_result.innerHTML="неа)";
