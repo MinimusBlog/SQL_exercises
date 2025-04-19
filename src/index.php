@@ -18,7 +18,7 @@
                 <ul class="menu">
                     <li class="menu__item menu__item--active"><a href="#">Справочник</a></li>
                     <li class="menu__item"><a href="#">Тесты</a></li>
-                    <li class="menu__item"><a href="#">Задачник</a></li>
+                    <li class="menu__item"><a href="./pages/tasks.php">Задачник</a></li>
                     <li class="menu__item"><a href="#">Песочница</a></li>
                 </ul>
             </nav>
