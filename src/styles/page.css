@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 24px;
+    /* margin-bottom: 30px; */
 }
 
 .hero__h1 {
@@ -30,5 +31,56 @@
 .hero__cta {
     display: flex;
     gap: 30px;
-    margin-bottom: 20px;
 }
+
+.manual {
+    max-width: var(--layout-width);
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: space-between */
+    align-items: center;
+    padding: 50px 24px;
+    /* margin-bottom: 30px; */
+}
+
+.manual__left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.manual__p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.chip--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+    overflow: scroll;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px 20px;
+    scrollbar-width: none;
+}
+
+.chip--wrapper--stroke {
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-20);
+    background-color: var(--color-bg-medium);
+}
+
+.chip-str {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    overflow: scroll;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px 20px;
+    scrollbar-width: none;
+}
+

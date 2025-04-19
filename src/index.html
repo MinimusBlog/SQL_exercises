@@ -13,7 +13,7 @@
 <body>
     <header class="header">
         <div class="header__wrapper">
-            <a href=""><img src="" alt=""></a>
+            <a href="#"><img class="header__logo" src="./images/logo.svg" alt="Логотип SQL Maestro"></a>
             <nav>
                 <ul class="menu">
                     <li class="menu__item menu__item--active"><a href="#">Справочник</a></li>
@@ -41,12 +41,35 @@
                 знания с помощью комплексных тестов. <br>
                 А встроенный справочник всегда прийдет <br>
                 к вам на помощь.</p>
+                <div class="hero__cta">
+                    <button class="button button-active">Задачник</button>
+                </div>
+            </div>
+            <img class="hero__right" src="./images/sql_ide.svg" alt="SQL IDE">
+        </div>
+    </section>
+    <section class="section">
+        <div class="manual">
+            <div class="manual__left">
+                <h1 class="hero__h1">Справочник SQL</h1>
+                <button class="btn button-category">Основное</button>
+                <p class="manual__p">Основные запросы</p>
+                <div class="chip--wrapper chip--wrapper--stroke">
+                    <button class="chip chip-active">SELECT <br>
+                    Получение записей</button>
+                    <button class="chip">INSERT <br>
+                    Вставка записей</button>
+                    <button class="chip">UPDATE <br>
+                    Изменение записей</button>
+                    <div class="chip-str">
+                        <button class="chip">DELETE <br>
+                        Удаление записей</button>
+                        <button class="chip">COUNT <br>
+                        Подсчет записей</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero__cta">
-            <button class="button button-active">Задачник</button>
-        </div>
-        <img class="hero__right" src="" alt="">
     </section>
 </body>
 </html>

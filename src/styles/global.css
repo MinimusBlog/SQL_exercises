@@ -1,13 +1,16 @@
 :root {
     --color-primary: #F7D61C;
     --color-bg: #F0F0F0;
+    --color-bg-medium: #F4F4F4;
 
-    --color-h1: #DEBD03;
+    --color-h1: #E1C525;
     --color-text: #000000;
     --color-text-light: #F4F4F4;
+    --link-hover: #EDEDED;
 
     --border-20: 20px;
     --layout-width: 1172px;
+    --layout-width-small: 25%;
 }
 
 * {
