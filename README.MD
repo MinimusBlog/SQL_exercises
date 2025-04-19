@@ -6,6 +6,14 @@
 - [cdnjs](https://cdnjs.com/).
 
 ---
+
+## Установка библиотек
+- [Sal.js](https://github.com/mciastek/sal)
+    ```
+    npm install --save sal.js
+    ```
+    
+---
 ## Команды, которые использовались в проекте:
 - инициализация редактора кода:
     ```javascript

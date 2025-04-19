@@ -73,8 +73,15 @@ if ($articleID > 0) {
         echo "<h1 class='article__title'>" . htmlspecialchars($article['title']) . "</h1>";
         echo "<p class='article--description'>" . htmlspecialchars($article['content']) . "</p>";
     } else {
-        echo "<p class='article--notfound'>Статья не найдена!</p>";
+        http_response_code(404); // Устанавливаем код ответа 404
+        include '../pages/error404.php'; // Подключаем страницу 404
+        exit;
     }
+} else {
+    // Если ID статьи равен 0 или не передан, то выводим 404
+    http_response_code(404);
+    include '../pages/error404.php'; // Подключаем страницу 404
+    exit;
 }
 
 // Переключение между статьями 1 2..
