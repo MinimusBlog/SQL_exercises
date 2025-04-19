@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
 	
 	<!-- настройки сайта (?) -->
@@ -80,7 +79,7 @@
 				<p class="hint__text"><?php echo $taskHint ?></p>
 				<button class="button button-active" onclick="hint__button__onClick()">показать подсказку</button>
 			</div>
-
+			<hr class="line" noshade>
 			<!-- codemirror, который чистый JS -->
 			<textarea class="editor__textarea">А это поле для написания кода SQL.</textarea>
 
@@ -89,6 +88,7 @@
 				<button class="button button-active" onclick="checkAwnser()">проверить</button>
 				<p class="check__result window">тут текст меняется на правильно и нет</p>
 			</div>
+
 	<script type="text/javascript">
 			let editor = document.getElementsByClassName("editor__textarea")[0];
 	let myCodeMirror = CodeMirror.fromTextArea(editor,{
