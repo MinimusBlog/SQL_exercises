@@ -7,10 +7,11 @@
 }*/
 
 /*CSS окна с задачей*/
-*{
+.window, .button{
 	margin-inline: 4px;
 	margin-top: 4px;
 }
+
 .task{
 	padding: 16px 32px;
     color: var(--color-text);
