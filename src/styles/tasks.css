@@ -1,0 +1,63 @@
+/*общий CSS*/
+.header__wrapper {
+    margin: 0  auto;
+    display: grid;
+    align-items: center;
+    padding: 20px 14px;
+}
+
+/*CSS окна с задачей*/
+.task{
+	padding: 0px 14px;
+	border: 3px solid #000000;
+	box-shadow: 5px 4px 0px 0px #000000;
+}
+
+/*общий стиль подсказки*/
+.hint{
+	font-style: italic;
+}
+
+/*общий стиль кнопок*/
+button{
+	border: 3px solid #000000;
+	display: grid;
+	outline: none;
+	padding: 5px 14px;
+	margin: 5px 0;
+	position: relative;
+	text-align: center;
+	width: auto;
+	box-shadow: 5px 4px 0px 0px #000000;
+}
+
+/*текст кнопки на главную*/
+.go__back__link{
+	color: #000000;
+}
+
+/*текст подсказки*/
+.hint__text{
+	animation-play-state: paused;
+	position:relative;
+	display: flex;
+	left: -100%;
+	/*visibility: hidden;*/
+	animation-name: show-hint;
+	animation-duration: 1s;
+}
+
+/*поле вывода*/
+.check__result{
+	padding: 0px 14px;
+	border: 3px solid #000000;
+	box-shadow: 5px 4px 0px 0px #000000;
+	padding: 20px 14px;
+}
+/*это CSS анимация для текста подсказки*/
+@keyframes show-hint {
+	from {left: -100%;}
+	to {left: 0;}
+}
+
+/*media не копировал.*/
