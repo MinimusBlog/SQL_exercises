@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
 	
 	<!-- настройки сайта (?) -->
@@ -44,6 +43,7 @@
             </button>
         </div>
     </header>
+
 			<!-- номер задачи -->
 			<div class="level">
 				<h1 class="level__number">Здесь номер задачи</h1>
@@ -69,7 +69,7 @@
 				<p class="check__result window">тут текст меняется на правильно и нет</p>
 			</div>
 		</div>
-	
+
 	<!-- JS пока не заменил... -->
 	<script type="text/javascript">
 
