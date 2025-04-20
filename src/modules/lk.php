@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php if (!empty($_SESSION['auth'])): ?>
             <p>Приветствую, <?php echo htmlspecialchars($_SESSION['login']); ?>!</p>
         <?php else: ?>
-            <a href="/auth/auth.php">Логин</a>
+            <a href="/modules/auth.php">Логин</a>
         <?php endif; ?>
     </header>
     <form action="" method="POST">
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php if ($confirmPasswordError) echo "<p style='color:red;'>$confirmPasswordError</p>"; ?>
         <input type="submit" name="submit" value="Change Password">
     </form>
-    <a href="../auth/delete_account.php">Удалить аккаунт</a>
-    <a href="../auth/logout.php">Выйти</a>
+    <a href="../modules/delete_account.php">Удалить аккаунт</a>
+    <a href="../modules/logout.php">Выйти</a>
 </body>
 </html>

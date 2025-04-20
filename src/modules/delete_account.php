@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $delete_query = "DELETE FROM users WHERE id='$id'";
             if (mysqli_query($link, $delete_query)) {
                 session_destroy();
-                header("Location: /modules/auth.php");
+                header("Location: ./modules/auth.php");
                 exit();
             } else {
                 // Ошибка при удалении аккаунта
