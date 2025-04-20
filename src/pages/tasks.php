@@ -27,16 +27,23 @@
 				$taskText =  "";
 				$taskHint =  "";
 				$taskAwnser =  "";
-				function loadFromDB($id){
+				function loadFromDB($id,&$taskText,&$taskHint,&$taskAwnser,$result){
 					while($row = mysqli_fetch_assoc($result)){
-						if ($row["taskID"]==$id){
-						$taskText = $row["taskText"];
-						$taskHint = $row["taskHint"];
-						$taskAwnser = $row["taskAwnser"];
+						if ($row["taskID"]==(int)$id){
+							$taskText=$row["taskText"];
+							$taskHint=$row["taskHint"];
+							$taskAwnser=$row["taskAwnser"];
 						}
 					}
 				}
-				
+
+				if (isset($_COOKIE['level'])){
+					loadFromDB($_COOKIE['level'],$taskText,$taskHint,$taskAwnser,$result);
+
+				}else{
+					
+				loadFromDB(0,$taskText,$taskHint,$taskAwnser,$result);
+				}
 				?>
 
 
@@ -91,7 +98,7 @@
 							echo "<tr>";
 						
 							for($j=0;$j<5;$j++){
-								echo "<td><input class='checkbox' type='checkbox' name='"; echo strval($i+$j); echo "' value=0></td>";
+								echo "<td><input class='checkbox' type='checkbox' name='"; echo strval($i+$j); echo "'></td>";
 						
 							}
 						echo "</tr>";
@@ -172,20 +179,13 @@
 	}
 	function updbox(box){
 		if(box.checked){
-			box.value="1";
 			box.checked=false;
+			document.cookie = "level="+box.name;
+			window.location.reload();
 		}else{
-			box.value="0";
 		}
 
 	}
 	</script>
-	<?php
-	for($i=0;$i<25;$i++){
-		if($_POST[strval($i)]=='1'){
-			loadFromDB($i);
-		}
-	}
-	?>
 </body>
 </html> 
