@@ -33,7 +33,7 @@
                     </li>
                 </ul>
             </nav>
-            <a href="#" class="header__login" aria-label="Вход в личный кабинет" 
+            <a href="./modules/auth.php" class="header__login" aria-label="Вход в личный кабинет" 
             data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                 <img src="./images/icons/user.svg" alt="Иконка пользователя">
             </a>

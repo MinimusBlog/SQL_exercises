@@ -7,6 +7,15 @@
 - [Ani.js](https://anijs.github.io/)
 ---
 
+### Установка
+[Python](https://www.python.org/downloads/)
+
+
+```sh
+$ git clone https://github.com/MinimusBlog/SQL_exercises.git
+```
+---
+
 ## Команды, которые использовались в проекте:
 - инициализация редактора кода:
     ```javascript
