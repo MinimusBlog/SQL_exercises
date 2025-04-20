@@ -25,24 +25,13 @@
     /*display: inline-block;*/
     text-align: center;
 }
-
-/*общий стиль подсказки*/
-/*.hint{
-	font-style: italic;
-}*/
-
-/*общий стиль кнопок*/
-/*button{
-	border: 3px solid #000000;
-	display: grid;
-	outline: none;
-	padding: 5px 14px;
-	margin: 5px 0;
-	position: relative;
-	text-align: center;
-	width: auto;
-	box-shadow: 5px 4px 0px 0px #000000;
-}*/
+.line{
+	margin-inline: 4px;
+	background-color:var(--color-primary);
+	color:var(--color-primary);
+	width:100%;
+	height: 5px;
+}
 
 /*текст кнопки на главную*/
 .go__back__link{
@@ -59,13 +48,29 @@
 	animation-name: show-hint;
 	animation-duration: 1s;
 }
-
+.level__number{
+	padding-left: 14px;
+}
+.timer{
+	padding: 0px 14px;
+	margin-bottom: 4px;
+	font-weight: 500;
+}
+.under-editor{
+	display: flex;
+	align-items: center;
+}
 .window{
 	border: 3px solid var(--color-primary);
 	box-shadow: 5px 4px 0px 0px #000000;
 	background-color: white;
 }
-
+.level-menu{
+	z-index: 1;
+	position:absolute;
+	margin-left: 15%;
+	display:none;
+}
 /*поле вывода*/
 .check__result{
 	padding: 20px 14px;
@@ -73,7 +78,5 @@
 /*это CSS анимация для текста подсказки*/
 @keyframes show-hint {
 	from {left: -100%;}
-	to {left: 0;}
+	to {left: 14px;}
 }
-
-/*media не копировал.*/
