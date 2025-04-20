@@ -10,9 +10,9 @@
 	
 	<!-- импортируем тут всякое... -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet"/>
-	<link rel="stylesheet" href="../styles/components.css"/>
-	<link rel="stylesheet" href="../styles/header.css"/>
-    <link rel="stylesheet" href="../styles/tasks.css"/>
+	<link rel="stylesheet" href="../styles/sections/components.css"/>
+	<link rel="stylesheet" href="../styles/sections/header.css"/>
+    <link rel="stylesheet" href="../styles/sections/tasks.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/elegant.min.css"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
