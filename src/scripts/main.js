@@ -57,14 +57,14 @@ let menu__isShown=false;
 		timer+=addZero((dtime%100).toString());
 		document.getElementsByClassName("timer")[0].innerHTML = timer;
 	}
-	function updbox(box){
-		if(box.checked){
-			box.checked=false;
-			document.cookie = "level="+box.name;
-			window.location.reload();
-		}else{
+	function updbox(box) {
+		console.log("Чекбокс нажат: ", box.name); // Отладочный вывод
+		if (box.checked) {
+			box.checked = false;
+			document.cookie = "level=" + box.name + "; path=/"; // Устанавливаем куку
+			console.log("Кука обновлена: level=" + box.name); // Отладочный вывод
+			window.location.reload(); // Перезагружаем страницу
 		}
-
 	}
 
 	sal(); //инициализация анимаций
