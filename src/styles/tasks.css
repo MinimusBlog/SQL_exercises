@@ -72,7 +72,18 @@
 	animation-name: show-hint;
 	animation-duration: 1s;
 }
-
+.level__number{
+	padding-left: 14px;
+}
+.timer{
+	padding: 0px 14px;
+	margin-bottom: 4px;
+	font-weight: 500;
+}
+.under-editor{
+	display: flex;
+	align-items: center;
+}
 .window{
 	border: 3px solid var(--color-primary);
 	box-shadow: 5px 4px 0px 0px #000000;
