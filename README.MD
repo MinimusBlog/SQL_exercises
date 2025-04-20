@@ -3,17 +3,10 @@
 ## Инструменты, использованные для создания сайта:
 - [CodeMirror](https://codemirror.net/).
 - [MAMP](https://www.mamp.info/en/windows/).
-- [cdnjs](https://cdnjs.com/).
-
+- [cdnjs](https://cdnjs.com/).   
+- [Ani.js](https://anijs.github.io/)
 ---
 
-## Установка библиотек
-- [Sal.js](https://github.com/mciastek/sal)
-    ```
-    npm install --save sal.js
-    ```
-    
----
 ## Команды, которые использовались в проекте:
 - инициализация редактора кода:
     ```javascript
