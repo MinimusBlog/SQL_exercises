@@ -23,18 +23,20 @@
 				include "../includes/settings.php";
 				$sql = "SELECT * FROM tasks";
 				$result = mysqli_query($link,$sql);
-
-				$id = 0; // это ID, по которому берётся задание
+				//$id = 0; // это ID, по которому берётся задание
 				$taskText =  "";
 				$taskHint =  "";
 				$taskAwnser =  "";
-				while($row = mysqli_fetch_assoc($result)){
-					if ($row["taskID"]==$id){
-					$taskText = $row["taskText"];
-					$taskHint = $row["taskHint"];
-					$taskAwnser = $row["taskAwnser"];
+				function loadFromDB($id){
+					while($row = mysqli_fetch_assoc($result)){
+						if ($row["taskID"]==$id){
+						$taskText = $row["taskText"];
+						$taskHint = $row["taskHint"];
+						$taskAwnser = $row["taskAwnser"];
+						}
 					}
 				}
+				
 				?>
 
 
@@ -79,7 +81,24 @@
 				<p class="hint__text"><?php echo $taskHint ?></p>
 				<div class="under-editor">
 					<button class="button button-active" onclick="hint__button__onClick()">показать подсказку</button>
+					<button class="button button-active" onclick="menu__levels()">Задания</button>
 					<p class="window timer"></p>
+					<div class="level-menu window">
+						<p style="height:0;padding:0px; margin:14px 4px;">Уровни</p>
+						<table style="height:0;padding:0px; margin:0px;">
+						<?php
+						for($i=0;$i<5;$i++){
+							echo "<tr>";
+						
+							for($j=0;$j<5;$j++){
+								echo "<td><input class='checkbox' type='checkbox' name='"; echo strval($i+$j); echo "' value=0></td>";
+						
+							}
+						echo "</tr>";
+						}
+						?>
+						</table>
+					</div>
 				</div>
 			<hr class="line" noshade>
 			<!-- codemirror, который чистый JS -->
@@ -93,6 +112,7 @@
 
 	<script type="text/javascript">
 	//переменные таймера
+	let menu__isShown=false;
 	let isRunning=true;
 	let dtime=0;
 	let timer ="";
@@ -105,6 +125,8 @@
 		});
 	let hint_text = document.getElementsByClassName("hint__text")[0].style;
 	let check_result = document.getElementsByClassName("check__result")[0];
+	let level_menu = document.getElementsByClassName("level-menu")[0];
+	let checkboxes =document.getElementsByClassName("checkbox");
 	
 	// это анимация окна подсказки.
 	function hint__button__onClick(){
@@ -123,17 +145,47 @@
 			
 		}
 	}
+	function menu__levels(){
+		menu__isShown=!menu__isShown;
+		if(menu__isShown){
+			level_menu.style.display="grid";
+		}else{
+			level_menu.style.display="none";
+		}
+	}
 
 	//таймер
 	function addZero(i){if(i<10){i="0"+i}return i;}
 	setInterval(Cycle, 10);
 	function Cycle(){
+
+		for (const element of checkboxes) {
+			updbox(element);
+}
+		
+
 		if(isRunning){dtime+=1;}
 		timer=addZero(Math.floor(dtime/6000)).toString()+":";
 		timer+=addZero(Math.floor((dtime/100)%60).toString())+":";
 		timer+=addZero((dtime%100).toString());
 		document.getElementsByClassName("timer")[0].innerHTML = timer;
 	}
+	function updbox(box){
+		if(box.checked){
+			box.value="1";
+			box.checked=false;
+		}else{
+			box.value="0";
+		}
+
+	}
 	</script>
+	<?php
+	for($i=0;$i<25;$i++){
+		if($_POST[strval($i)]=='1'){
+			loadFromDB($i);
+		}
+	}
+	?>
 </body>
 </html> 

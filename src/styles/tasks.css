@@ -89,7 +89,12 @@
 	box-shadow: 5px 4px 0px 0px #000000;
 	background-color: white;
 }
-
+.level-menu{
+	z-index: 1;
+	position:absolute;
+	margin-left: 15%;
+	display:none;
+}
 /*поле вывода*/
 .check__result{
 	padding: 20px 14px;
