@@ -6,26 +6,39 @@
     <link rel="stylesheet" href="./styles/global.css">
     <title>SQL Maestro</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="styles/page.css">
-    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="./styles/anicollection.css">
+    <link rel="stylesheet" href="./styles/sections/header.css">
+    <link rel="stylesheet" href="./styles/sections/page.css">
+    <link rel="stylesheet" href="./styles/sections/components.css">
 </head>
 <body>
     <header class="header">
         <div class="header__wrapper">
-            <a href="#"><img class="header__logo" src="./images/logo.svg" alt="Логотип SQL Maestro"></a>
+            <a href="#" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                <img class="header__logo" src="./images/logo.svg" alt="Логотип SQL Maestro">
+            </a>
             <nav>
                 <ul class="menu">
-                    <li class="menu__item menu__item--active"><a href="#">Справочник</a></li>
-                    <li class="menu__item"><a href="#">Тесты</a></li>
-                    <li class="menu__item"><a href="./pages/tasks.php">Задачник</a></li>
-                    <li class="menu__item"><a href="#">Песочница</a></li>
+                    <li class="menu__item menu__item--active" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="../src/modules/article.php">Справочник</a>
+                    </li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="../src/pages/tests.html">Тесты</a>
+                    </li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="../src/pages/tasks.php">Задачник</a>
+                    </li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="#">Песочница</a>
+                    </li>
                 </ul>
             </nav>
-            <a href="#" class="header__login" aria-label="Вход в личный кабинет">
+            <a href="#" class="header__login" aria-label="Вход в личный кабинет" 
+            data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                 <img src="./images/icons/user.svg" alt="Иконка пользователя">
             </a>
-            <button class="header__mobile-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button class="header__mobile-menu-button" aria-expanded="false" aria-haspopup="true"
+            data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                 <img src="./images/icons/burger.svg" alt="Мобильное меню">
             </button>
         </div>
@@ -41,7 +54,7 @@
                 знания с помощью комплексных тестов. <br>
                 А встроенный справочник всегда прийдет <br>
                 к вам на помощь.</p>
-                <div class="hero__cta">
+                <div class="hero__cta" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                     <button class="button button-active">Задачник</button>
                 </div>
             </div>
@@ -52,28 +65,35 @@
         <div class="manual">
             <div class="manual__left">
                 <h1 class="hero__h1">Справочник SQL</h1>
-                <button class="btn button-category">Основное</button>
+                <button class="btn button-category" 
+                data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                Основное</button>
                 <p class="manual__p">Основные запросы</p>
                 <div class="chip--wrapper chip--wrapper--stroke">
                     <button class="chip chip-active" 
-                    onclick="window.location.href='./modules/article.php?id=1'">
+                    onclick="window.location.href='./modules/article.php?id=1'" 
+                    data-anijs="if: mouseover, do: pulse animated, to: $children .content-wrapper">
                     SELECT <br>
                     Получение записей</button>
                     <button class="chip"
-                    onclick="window.location.href='./modules/article.php?id=2'">
+                    onclick="window.location.href='./modules/article.php?id=2'" 
+                    data-anijs="if: mouseover, do: pulse animated, to: $children .content-wrapper">
                     INSERT <br>
                     Вставка записей</button>
                     <button class="chip"
-                    onclick="window.location.href='./modules/article.php?id=3'">
+                    onclick="window.location.href='./modules/article.php?id=3'"
+                    data-anijs="if: mouseover, do: pulse animated, to: $children .content-wrapper">
                     UPDATE <br>
                     Изменение записей</button>
                     <div class="chip-str">
                         <button class="chip"
-                        onclick="window.location.href='./modules/article.php?id=4'">
+                        onclick="window.location.href='./modules/article.php?id=4'"
+                        data-anijs="if: mouseover, do: pulse animated, to: $children .content-wrapper">
                         DELETE <br>
                         Удаление записей</button>
                         <button class="chip"
-                        onclick="window.location.href='./modules/article.php?id=5'">
+                        onclick="window.location.href='./modules/article.php?id=5'"
+                        data-anijs="if: mouseover, do: pulse animated, to: $children .content-wrapper">
                         COUNT <br>
                         Подсчет записей</button>
                     </div>
@@ -81,5 +101,7 @@
             </div>
         </div>
     </section>
+    <script src="./scripts/anijs-min.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 </html>

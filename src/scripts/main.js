@@ -46,3 +46,5 @@
 			document.getElementById('result').textContent = `Ошибка запроса: ${error}`;
 		});
 	}
+
+	sal();

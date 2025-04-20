@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/global.css">
     <title>Ошибка 404</title>
+    <link rel="stylesheet" href="../styles/anicollection.css">
 </head>
 <body>
-    <section class="py-16 px-0">
+    <section class="py-16 px-0"> 
         <div class="w-[calc(100%_-_3rem)] max-w-3xl mx-auto">
             <div class="text-center mb-12" style="align-items: center; display: flex; flex-direction: column;">
                 <h1 class="text-4xl mb-6">Статья не найдена!</h1>
                 <p class="mb-4">Извините, страница, которую вы искали, не найдена.</p>
                 <p><a href="../index.php">Вернуться на главную страницу</a></p>
             </div>
-            <div aria-label="404 animation">
+            <div aria-label="404 animation" data-anijs="if: click, do: rubberBand animated">
                 <svg class="block max-w-[520px] mx-auto" id="i-fof" viewBox="0 0 520 450" width="30%" display:flex;>
                     <g id="i-fof-ship"><path id="i-fof-capsule" d="M260,9a53,53,0,0,0-53,53H313A53,53,0,0,0,260,9Z" 
                     fill="hsl(240, 4%, 85%)"/><path id="i-fof-ship-top" d="M448,73H72s78-37,188-37S448,73,448,73Z" 
@@ -38,5 +39,7 @@
             </div>
         </div>
     </section>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/anijs.js"></script>
 </body> 
 </html>

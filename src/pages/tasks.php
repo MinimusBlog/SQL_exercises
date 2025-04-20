@@ -4,14 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../styles/global.css"/>
 	<title>SQL Maestro</title>
-	
-	<!-- импортируем тут всякое... -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet"/>
 	<link rel="stylesheet" href="../styles/components.css"/>
-	<link rel="stylesheet" href="../styles/header.css"/>
-    <link rel="stylesheet" href="../styles/tasks.css"/>
+	<link rel="stylesheet" href="../styles/sections/header.css"/>
+    <link rel="stylesheet" href="../styles/sections/tasks.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/elegant.min.css"/>
+	<link rel="stylesheet" href="../styles/anicollection.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/sql/sql.min.js"></script>
 
@@ -19,19 +18,31 @@
 <body>
 	<header class="header">
         <div class="header__wrapper">
-            <a href="../index.php"><img src="../images/logo.svg" alt="Логотип"></a>
+            <a href="../index.php" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+				<img src="../images/logo.svg" alt="Логотип">
+			</a>
             <nav>
                 <ul class="menu">
-                    <li class="menu__item menu__item"><a href="../index.html">Справочник</a></li>
-                    <li class="menu__item"><a href="#">Тесты</a></li>
-                    <li class="menu__item menu__item--active"><a href="#">Задачник</a></li>
-                    <li class="menu__item"><a href="#">Песочница</a></li>
+                    <li class="menu__item menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+						<a href="../modules/article.php">Справочник</a>
+					</li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+						<a href="../pages/tests.html">Тесты</a>
+					</li>
+                    <li class="menu__item menu__item--active" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+						<a href="#">Задачник</a>
+					</li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+						<a href="#">Песочница</a>
+					</li>
                 </ul>
             </nav>
-            <a href="#" class="header__login" aria-label="Вход в личный кабинет">
+            <a href="#" class="header__login" aria-label="Вход в личный кабинет"
+			data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                 <img src="../images/icons/user.svg" alt="Иконка пользователя">
             </a>
-            <button class="header__mobile-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button class="header__mobile-menu-button" aria-expanded="false" aria-haspopup="true"
+			data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                 <img src="../images/icons/burger.svg" alt="Мобильное меню">
             </button>
         </div>
@@ -67,6 +78,7 @@
 		</div>
 
 	<script type="modules" href="../scripts/main.js"></script>
+	<script src="../scripts/anijs-min.js"></script>
 	
 </body>
 </html> 

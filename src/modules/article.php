@@ -6,30 +6,46 @@
     <link rel="stylesheet" href="../styles/global.css">
     <title>SQL Справочник</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/page.css">
-    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/sections/header.css">
+    <link rel="stylesheet" href="../styles/sections/page.css">
+    <link rel="stylesheet" href="../styles/sections/components.css">
+    <link rel="stylesheet" href="../styles/anicollection.css">
 </head>
 <body>
     <header class="header">
         <div class="header__wrapper">
-            <a href="../index.php"><img class="header__logo" src="../images/logo.svg" alt="Логотип SQL Maestro"></a>
+            <a href="../index.php" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                <img class="header__logo" src="../images/logo.svg" alt="Логотип SQL Maestro">
+            </a>
             <nav>
                 <ul class="menu">
-                    <li class="menu__item menu__item--active"><a href="#">Справочник</a></li>
-                    <li class="menu__item"><a href="#">Тесты</a></li>
-                    <li class="menu__item"><a href="#">Задачник</a></li>
-                    <li class="menu__item"><a href="#">Песочница</a></li>
+                    <li class="menu__item menu__item--active"
+                    data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="#">Справочник</a>
+                    </li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="#">Тесты</a>
+                    </li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="../pages/tasks.php">Задачник</a>
+                    </li>
+                    <li class="menu__item" data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
+                        <a href="#">Песочница</a>
+                    </li>
                 </ul>
             </nav>
-            <a href="#" class="header__login" aria-label="Вход в личный кабинет">
+            <a href="#" class="header__login" aria-label="Вход в личный кабинет"
+            data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                 <img src="../images/icons/user.svg" alt="Иконка пользователя">
             </a>
-            <button class="header__mobile-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button class="header__mobile-menu-button" aria-expanded="false" aria-haspopup="true"
+            data-anijs="if: click, do: pulse animated, to: $children .content-wrapper">
                 <img src="../images/icons/burger.svg" alt="Мобильное меню">
             </button>
         </div>
     </header>
+    <script src="../scripts/anijs-min.js"></script>
+    <script src="../scripts/main.js"></script>
 </body>
 </html>
 
